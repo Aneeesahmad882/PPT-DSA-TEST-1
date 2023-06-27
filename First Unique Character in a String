@@ -1,0 +1,17 @@
+#Answer_First_Unique_Character_in_a_String
+s1 = "leetcode"
+s2 = "loveleetcode"
+s3 = "aabb"
+def firstUniqChar(s):
+    char_freq = {}  # Hash map to store character frequencies
+    # Count the frequency of each character in the string
+    for char in s:
+        char_freq[char] = char_freq.get(char, 0) + 1
+    # Find the index of the first non-repeating character
+    for i, char in enumerate(s):
+        if char_freq[char] == 1:
+            return i
+    return -1
+print(firstUniqChar(s1))
+print(firstUniqChar(s2))
+print(firstUniqChar(s3))
