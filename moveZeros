@@ -1,0 +1,14 @@
+#Answer_Move_Zeros
+nums1 = [0,1,0,3,12]
+nums2 = [0]
+def moveZeros(nums):
+    n = len(nums)
+    left = 0  # Pointer to track the position to swap non-zero elements
+    # Traverse the array and swap non-zero elements to the left side
+    for i in range(n):
+        if nums[i] != 0:
+            nums[left], nums[i] = nums[i], nums[left]
+            left += 1
+    return nums
+print(moveZeros(nums1))
+print(moveZeros(nums2))
